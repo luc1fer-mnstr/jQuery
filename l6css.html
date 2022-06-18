@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Css</title>
+</head>
+<body>
+
+	<h1>Hello Thailand</h1>
+	<h2>Hello Thailand</h2>
+	<h3>Hello Thailand</h3>
+
+
+	<button type="button" id="forup">Change new color</button>
+
+	<h4>Hello Owi</h4>
+	<h5>Hello Owi</h5>
+	<h6>Hello Owi</h6>
+
+	<button type="button" id="fordown">Click Me</button>
+
+
+
+
+	<script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+		
+		console.log('hay');
+
+		$(document).ready(function(){
+			console.log('hi');
+
+
+			$('#forup').click(function(){
+				// console.log('i am working');
+
+					// css(property,value)
+				$('h1').css('background','red');
+				$('h2').css('background','green');
+				$('h3').css({
+					"background":"blue",
+					"font-family":"Arial",
+					"color":"white"
+				});
+
+			});
+
+		});
+
+		
+
+		$(document).ready(function(){
+			$('#fordown').click(function(){
+				$('h4').css('background','linear-gradient(red,black)');
+				$('h5').css('background','conic-gradient(red,blue)');
+				$('h6').css({
+					"background":"orange",
+					"color":"#fff",
+					"fontSize":"20px"
+				});
+			});
+		});
+
+	</script>
+
+</body>
+</html>
