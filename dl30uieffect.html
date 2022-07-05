@@ -29,7 +29,7 @@
 			height: 100px;
 		}
 
-		.square1,.square7{
+		.square1,.square7,.square13{
 			background-color: green;
 		}
 
@@ -70,11 +70,23 @@
 		<div class="box square10">10</div>
 		<div class="box square11">11</div>
 		<div class="box square12">12</div>
+		<div class="box square13">13</div>
 	</div>
 
 	<div class="control">
 		<button type="button" id="shakebtn">Shake</button>
-		<button type="button" id="bouncebtn">Bounce</button>
+		<button type="button" id="shakebtn">Shake</button>
+		<button type="button" id="shakebtn">Shake</button>
+		<button type="button" id="blindbtn">Dlind</button>
+		<button type="button" id="clipbtn">Clip</button>
+		<button type="button" id="dropbtn">Drop</button>
+		<button type="button" id="explodebtn">Explode</button>
+		<button type="button" id="foldbtn">Fold</button>
+		<button type="button" id="highlightbtn">Highlight</button>
+		<button type="button" id="puffbtn">Puff</button>
+		<button type="button" id="pulsatebtn">Pulsate</button>
+		<button type="button" id="sizebtn">Size</button>
+		<button type="button" id="slidebtn">Slide</button>
 	</div>
 
 
@@ -92,6 +104,9 @@
 			// selector.effect(type,{param},speed);
 
 
+			// $(".square1,.square2,.square3,.square4,.square5,.square6,.square7,.square8,.square9,.square10,.square11,.square12,.square13").hide();
+
+
 			$("#shakebtn").click(function(){
 
 				// $(".square1").effect("shake",1000);
@@ -99,14 +114,16 @@
 				// $(".square1").effect("shake","slow");
 
 
-				$(".square1").effect("shake",{
-					// direction:"left"
-					// direction:"right"
-					// direction:"up"
-					direction:"down",
-					times:10,
-					distance:200
-				},2000);
+				// $(".square1").effect("shake",{
+				// 	// direction:"left"
+				// 	// direction:"right"
+				// 	// direction:"up"
+				// 	direction:"down",
+				// 	times:10,
+				// 	distance:200
+				// },2000);
+
+				$(".square1").hide("explode",3000);
 
 			});
 
@@ -128,6 +145,8 @@
 
 			});
 
+
+			
 
 
 		});
