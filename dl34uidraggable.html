@@ -12,6 +12,13 @@
 			justify-content: center;
 			align-items: center;
 		}
+
+		.container{
+			width: 900px;
+			height: 700px;
+			background: #f4f4f4;
+			box-shadow: 10px 10px 5px #777;
+		}
 		
 		.box{
 			width: 250px;
@@ -24,6 +31,8 @@
 			align-items: center;
 		}
 
+
+
 	</style>
 </head>
 <body>
@@ -32,6 +41,18 @@
 		
 		<div id="dragme" class="box">
 			<p>Drag Me wherever you want !!!</p>
+		</div>
+
+		<div id="dragmeonx" class="box">
+			<p>Drag Me on X !!!</p>
+		</div>
+
+		<div id="dragmeony" class="box">
+			<p>Drag Me on Y !!!</p>
+		</div>
+
+		<div id="dragmeoncnt" class="box">
+			<p>Drag Me on container area only !!!</p>
 		</div>
 
 	</div>
@@ -46,7 +67,59 @@
 		$(document).ready(function(){
 			// console.log('hi');
 
-			$("#dragme").draggable();
+			// $("#dragme").draggable({
+			// 	// cursor : "grab",
+			// 	// cursor : "move",
+			// 	cursor : "crosshair",
+			// });
+
+
+			$("#dragmeonx").draggable({
+				axis : "x"
+			});
+
+			$("#dragmeony").draggable({
+				axis : "y"
+			});
+
+			// $("#dragmeoncnt").draggable({
+			// 	containment : ".container"
+			// });
+
+			// $("#dragme,#dragmeoncnt").draggable({
+			// 	cancel : "#dragme"
+			// });
+
+			$("#dragme").draggable({
+				start:function(){
+					$(this).css("background","violet");
+				},
+
+				drag:function(){
+					$(this).text("Element is moving...");
+				},
+
+				stop:function(){
+					$(this).text("Element stopped !!!");
+					// $(this).css("background","steelblue");
+				},
+
+				// revert: true,
+				// revertDuration : 2000,
+
+				revert:function(){
+					$(this).css("background","orange");
+					return true
+				},
+
+				revertDuration : 1000,
+
+						// x,y
+				// grid : [0,100],
+				// grid : [100,0],
+				grid : [100,200]
+
+			});
 
 		});
 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dialog</title>
+	<link href="./libs/jquery-ui-1.13.1/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+	<div class="dbox" title="How to use jQuery UI?">
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+	</div>
+
+	<button class="btn">Click Me</button>
+	<button class="tgbtn">Toggle Button</button>
+
+
+
+
+	<script src="./libs/jquery-3.6.0.min.js" type="text/javascript"></script>
+	<script src="./libs/jquery-ui-1.13.1/jquery-ui.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+			// console.log('hi');
+
+			$(".dbox").dialog({
+				autoOpen:false,
+				width:400,
+				height:200,
+				title:"Are you ready to use jQuery ui?",
+				hide:"pulsate",
+				show:"slideDown",
+				position:{
+					// at:"left"
+					// at:"left top"
+				}
+			}).css({
+				"background":"grey",
+				"color":"#fff"
+			});
+
+			// for box
+			$(".dbox").parent().css("background","orange");
+
+			// for title
+			$(".dbox").siblings("div:nth-of-type(1)").css("background","skyblue");
+
+			// for button
+			$(".dbox").siblings("div:nth-of-type(1)").find("button").css("background","yellow");
+
+			// For click me button
+			// $(".btn").click(function(){
+			// 	$(".dbox").dialog({
+			// 		autoOpen:true
+			// 	});
+			// });
+
+			$(".btn").click(function(){
+				$(".dbox").dialog("open"); 
+			});
+
+			$(".tgbtn").click(function(){
+				$(".dbox").dialog("isOpen")=== true ? $(".dbox").dialog("close") : $(".dbox").dialog("open"); 
+			});
+
+		});
+
+	</script>
+
+</body>
+</html>

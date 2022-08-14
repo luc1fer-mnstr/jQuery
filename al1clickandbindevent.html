@@ -29,7 +29,8 @@
 		$(document).ready(function(){
 
 			$("#clickme").click('click',function(){
-				console.log('i am working by click');
+				// window.alert('i am working by click');
+				console.log("i am working by click");
 			});
 
 			$("#singleclick").bind('click',function(){
@@ -37,7 +38,7 @@
 			});
 
 			$("#doubleclick").bind('dblclick',function(){
-				console.log('i am double click by bind' + this.nodeName);
+				console.log('i am double click by bind ' + this.nodeName);
 			});
 
 		});

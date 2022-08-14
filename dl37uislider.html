@@ -81,8 +81,35 @@
 				min:10,
 				max:200,
 				// value:50,
-				step:10
-			});
+				step:10,
+
+				orientation:"vertical",
+
+
+				// change:function(e,jqui){
+				// 	console.log('this is change = ' ,jqui.value);
+				// }
+
+				// start:function(e,jqui){
+				// 	console.log('this is start = ', jqui.value);
+				// }
+
+				stop:function(e,jqui){
+					console.log('this is stop = ', jqui.value);
+				}
+
+
+			}).css("background","steelblue");
+
+
+			// $("#myslider > span").css({
+			// 	"background":"yellow"
+			// })
+
+			$("#myslider").children("span").css("background","violet");
+
+
+
 		});
 
 	</script>
